@@ -1,0 +1,26 @@
+﻿using Account.Domain.Entity.AuthRole;
+using Account.Domain.Entity.LinkedEntites;
+using Account.Domain.Interfaces.Entites;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Account.Domain.Entity
+{
+    public class IndicatorScore
+    {
+        public long Id { get; set; } 
+        public byte ScoreValue { get; set; }
+        public byte Semester { get; set; }
+
+        public long StudentId { get; set; }
+        public string IndicatorId { get; set; }
+        public long TeacherId { get; set; }
+
+        public Student Student { get; set; }
+        public Indicator Indicator { get; set; }
+        public Teacher Teacher { get; set; }
+    }
+}
