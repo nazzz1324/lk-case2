@@ -8,24 +8,28 @@ namespace Account.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<IndicatorScore> builder)
         {
-            builder.Property(s => s.Id).ValueGeneratedOnAdd();
-            builder.Property(s => s.ScoreValue).IsRequired();
-            builder.Property(s => s.Semester).IsRequired();
-
+            builder.Property(s => s.Id).ValueGeneratedOnAdd().IsRequired();//
+            builder.Property(s => s.ScoreValue).IsRequired();//
+            builder.Property(s => s.Semester).IsRequired();//
+            builder.Property(s => s.MaxScore).IsRequired();//
+            builder.Property(s => s.StudentId).IsRequired();//
+            builder.Property(s => s.IndicatorId).IsRequired();//
+            builder.Property(s => s.TeacherId).IsRequired();//
+            
             builder.HasOne(s => s.Student)
                 .WithMany(st => st.IndicatorScores)
                 .HasForeignKey(s => s.StudentId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(s => s.Indicator)
                 .WithOne(i =>i.IndicatorScore)
                 .HasForeignKey<IndicatorScore>(s => s.IndicatorId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(s => s.Teacher)
                 .WithMany(t => t.IndicatorScores)
                 .HasForeignKey(s => s.TeacherId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);//
         }
     }
 }

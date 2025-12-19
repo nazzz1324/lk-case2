@@ -10,14 +10,14 @@ namespace Account.Domain.Entity
 {
     public class CompetenceScore
     {
-        public long Id { get; set; } 
-        public byte Score { get; set; }
-        public byte Semester { get; set; }
+        public long Id { get; set; }//
+        public byte Score { get; set; }//
+        public byte Semester { get; set; }//
 
-        public long StudentId { get; set; }
-        public string CompetenceId { get; set; }
+        public long StudentId { get; set; }//
+        public long CompetenceId { get; set; }//
 
-        public Student Student { get; set; }
-        public Competence Competence { get; set; }
+        public Student Student { get; set; }//
+        public Competence Competence { get; set; }//
     }
 }

@@ -11,14 +11,18 @@ namespace Account.Domain.Entity
     public class Student : IPeople
     {
         public long Id { get; set; } // Номер зачетки, PK for Student and FK for User
-        public string Fullname { get; set ; }
-        public DateTime DateOfBirth { get; set; }
-        public DateTime EnrollmentYear { get; set; } = DateTime.Now;
+        public string Firstname { get; set ; }//
+        public string Lastname { get; set; }//
+        public string? Middlename { get; set; }//
+        //public string? DateOfBirth { get; set; }
+        //public string StudentStatus { get; set; }
+        //public int EnrollmentYear { get; set; } = DateTime.Now.Year;
+        public long GroupId { get; set; }//
 
-        public ICollection<DisciplineScore> DisciplineScores { get; set; } = new List<DisciplineScore>();
-        public ICollection<CompetenceScore> CompetenceScores { get; set; } = new List<CompetenceScore>();
-        public ICollection<IndicatorScore> IndicatorScores { get; set; } = new List<IndicatorScore>();//Bestpracties
-        public User User { get; set; }
-        public Group Group { get; set; }
+        public ICollection<DisciplineScore> DisciplineScores { get; set; } = new List<DisciplineScore>();//
+        public ICollection<CompetenceScore> CompetenceScores { get; set; } = new List<CompetenceScore>();//
+        public ICollection<IndicatorScore> IndicatorScores { get; set; } = new List<IndicatorScore>();//
+        public User User { get; set; }//
+        public Group Group { get; set; }//
     }
 }

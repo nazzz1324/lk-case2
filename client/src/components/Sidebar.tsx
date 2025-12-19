@@ -31,7 +31,6 @@ const allNavItems: NavItem[] = [
   { id: "disciplines", label: "Дисциплины", icon: <BookOpen size={20} />, href: "/disciplines", roles: ["admin"] },
   { id: "competencies", label: "Компетенции", icon: <Target size={20} />, href: "/competencies", roles: ["admin"] },
   { id: "indicators", label: "Индикаторы", icon: <Pin size={20} />, href: "/indicators", roles: ["admin"] },
-  { id: "relations", label: "Связи", icon: <LinkIcon size={20} />, href: "/relations", roles: ["admin"] },
   { id: "professions", label: "Профессии", icon: <Briefcase size={20} />, href: "/professions", roles: ["admin"] }, // New Admin Page
   // Teacher Pages
   { id: "teacher-disciplines", label: "Мои дисциплины", icon: <BookOpen size={20} />, href: "/teacher/disciplines", roles: ["teacher"] },

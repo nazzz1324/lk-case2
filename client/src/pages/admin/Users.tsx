@@ -122,7 +122,7 @@ export default function Users() {
           className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap"
         >
           <Plus size={18} className="mr-2" />
-          Добавить пользователя
+          Добавить
         </Button>
       </div>
 

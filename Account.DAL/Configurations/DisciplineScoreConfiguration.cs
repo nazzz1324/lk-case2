@@ -8,19 +8,21 @@ namespace Account.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<DisciplineScore> builder)
         {
-            builder.Property(ds => ds.Id).ValueGeneratedOnAdd();
-            builder.Property(ds => ds.Score).IsRequired();
-            builder.Property(ds => ds.Semester).IsRequired();
+            builder.Property(ds => ds.Id).ValueGeneratedOnAdd().IsRequired(); //
+            builder.Property(ds => ds.Score).IsRequired(); //
+            builder.Property(ds => ds.Semester).IsRequired(); //
+            builder.Property(ds => ds.StudentId).IsRequired();//
+            builder.Property(ds => ds.DisciplineId).IsRequired();//
 
             builder.HasOne(ds => ds.Student)
                 .WithMany(s => s.DisciplineScores)
                 .HasForeignKey(ds => ds.StudentId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(ds => ds.Discipline)
                 .WithOne(d => d.DisciplineScore)
                 .HasForeignKey<DisciplineScore>(ds => ds.DisciplineId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .OnDelete(DeleteBehavior.ClientSetNull);//
         }
     }
 }

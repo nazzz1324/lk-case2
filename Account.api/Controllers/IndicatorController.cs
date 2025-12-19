@@ -21,9 +21,9 @@ namespace Account.api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 200)]
-        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 400)]
-        public async Task<ActionResult<BaseResult<IndicatorDto>>> Create([FromBody] IndicatorDto dto)
+        [ProducesResponseType(typeof(BaseResult<CreateIndicatorDto>), 200)]
+        [ProducesResponseType(typeof(BaseResult<CreateIndicatorDto>), 400)]
+        public async Task<ActionResult<BaseResult<CreateIndicatorDto>>> Create([FromBody] CreateIndicatorDto dto)
         {
             var response = await _indicatorService.CreateIndicatorAsync(dto);
 

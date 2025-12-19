@@ -98,7 +98,7 @@ export default function Disciplines() {
           onClick={() => handleOpenDialog()}
           className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap">
           <Plus size={18} className="mr-2" />
-          Добавить дисциплину
+          Добавить 
         </Button>
       </div>
 

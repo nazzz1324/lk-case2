@@ -44,7 +44,6 @@ namespace Account.DAL.DependencyInjection
             services.AddScoped<IBaseRepository<IndicatorScore>, BaseRepository<IndicatorScore>>();
             services.AddScoped<IBaseRepository<Student>, BaseRepository<Student>>();
             services.AddScoped<IBaseRepository<Teacher>, BaseRepository<Teacher>>();
-            services.AddScoped<IBaseRepository<Course>, BaseRepository<Course>>();
             services.AddScoped<IBaseRepository<EducationForm>, BaseRepository<EducationForm>>();
             services.AddScoped<IBaseRepository<Faculty>, BaseRepository<Faculty>>();
             services.AddScoped<IBaseRepository<ProfessionalRole>, BaseRepository<ProfessionalRole>>();

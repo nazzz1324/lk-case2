@@ -9,9 +9,9 @@ namespace Account.Domain.Entity
 {
     public class EducationForm
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
+        public long Id { get; set; } //
+        public string Name { get; set; } //
 
-        public ICollection<Group> Groups { get; set; } = new List<Group>();
+        public ICollection<Group> Groups { get; set; } = new List<Group>(); //
     }
 }

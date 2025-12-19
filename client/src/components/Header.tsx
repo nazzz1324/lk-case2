@@ -39,9 +39,7 @@ export default function Header({ title, userName = "Администратор",
         </div>
 
         {/* Logout Button */}
-        <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
-          <LogOut size={18} className="text-muted-foreground" />
-        </button>
+        
       </div>
     </header>
   );

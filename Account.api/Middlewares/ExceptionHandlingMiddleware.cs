@@ -38,7 +38,7 @@ namespace Account.api.Middlewares
 
                 await httpContext.Response.WriteAsJsonAsync(new BaseResult
                 {
-                    ErrorMessage = exResult.Message,
+                    Message = exResult.Message,
                     ErrorCode = (int)exResult.ErrorCode
                 });
                 return;
@@ -52,7 +52,7 @@ namespace Account.api.Middlewares
 
             await httpContext.Response.WriteAsJsonAsync(new BaseResult
             {
-                ErrorMessage = "Internal server error",
+                Message = "Internal server error",
                 ErrorCode = (int)ErrorCodes.InternalServerError
             });
         }

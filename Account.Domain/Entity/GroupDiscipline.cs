@@ -8,7 +8,7 @@ namespace Account.Domain.Entity
 {
     public class GroupDiscipline
     {
-        public long GroupId { get; set; } 
-        public long DisciplineId { get; set; }
+        public long GroupId { get; set; }//
+        public long DisciplineId { get; set; }//
     }
 }

@@ -103,7 +103,7 @@ export default function Groups() {
           className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap"
         >
           <Plus size={18} className="mr-2" />
-          Добавить группу
+          Добавить
         </Button>
       </div>
 

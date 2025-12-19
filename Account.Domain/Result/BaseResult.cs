@@ -8,15 +8,15 @@ namespace Account.Domain.Result
 {
     public class BaseResult
     {
-        public bool IsSuccess => ErrorMessage == null;
-        public string ErrorMessage {  get; set; }
+        public bool IsSuccess => Message == null;
+        public string Message {  get; set; }
         public int? ErrorCode { get; set; }
     }
     public class BaseResult<T> : BaseResult
     {
-        public BaseResult(string errorMessage, int errorCode, T data)
+        public BaseResult(string message, int errorCode, T data)
         {
-            ErrorMessage = errorMessage;
+            Message = message;
             ErrorCode = errorCode;
             Data = data;
 

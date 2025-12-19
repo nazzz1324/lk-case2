@@ -61,11 +61,38 @@ namespace Account.Application.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на CompetenceAlreadyExists.
+        /// </summary>
+        internal static string CompetenceAlreadyExists {
+            get {
+                return ResourceManager.GetString("CompetenceAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на CompetenceNotFound.
+        /// </summary>
+        internal static string CompetenceNotFound {
+            get {
+                return ResourceManager.GetString("CompetenceNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на IndicatorAlreadyExists.
         /// </summary>
         internal static string IndicatorAlreadyExists {
             get {
                 return ResourceManager.GetString("IndicatorAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на IndicatorNotFound.
+        /// </summary>
+        internal static string IndicatorNotFound {
+            get {
+                return ResourceManager.GetString("IndicatorNotFound", resourceCulture);
             }
         }
         

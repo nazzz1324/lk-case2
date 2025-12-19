@@ -23,7 +23,7 @@ namespace Account.Domain.Result
             return new BaseResult<T>
             {
                 ErrorCode = (int)ErrorCode,
-                ErrorMessage = Message
+                Message = Message
             };
         }
 
@@ -32,7 +32,7 @@ namespace Account.Domain.Result
             return new BaseResult
             {
                 ErrorCode = (int)ErrorCode,
-                ErrorMessage = Message
+                Message = Message
             };
         }
     }
