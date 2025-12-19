@@ -65,7 +65,7 @@ export default function Professions() {
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
             <Button onClick={() => handleAddEdit(null)}>
-              <Plus className="mr-2 h-4 w-4" /> Добавить Профессию
+              <Plus className="mr-2 h-4 w-4" /> Добавить
             </Button>
           </DialogTrigger>
           <DialogContent>

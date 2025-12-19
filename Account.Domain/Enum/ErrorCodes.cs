@@ -14,7 +14,11 @@ namespace Account.Domain.Enum
         UnauthorizedAccess = 14,
         UserAlreadyExistsThisRole = 15,
 
+        CompetenceAlreadyExists = 51,
+        CompetenceNotFound = 52,
+
         IndicatorAlreadyExists = 41,
+        IndicatorNotFound = 42,
 
         RoleAlreadyExists = 31,
         RoleNotFound = 32,

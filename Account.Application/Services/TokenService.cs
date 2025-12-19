@@ -90,7 +90,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<TokenDto>
                 {
-                    ErrorMessage = ErrorMessage.InvalidRequest,
+                    Message = ErrorMessage.InvalidRequest,
                 };
             }
 

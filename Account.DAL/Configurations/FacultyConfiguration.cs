@@ -8,13 +8,11 @@ namespace Account.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Faculty> builder)
         {
-            builder.Property(f => f.Id).ValueGeneratedOnAdd();
-            builder.Property(f => f.Name).IsRequired().HasMaxLength(200);
+            builder.Property(f => f.Id).ValueGeneratedOnAdd(); //
+            builder.Property(f => f.Name).IsRequired().HasMaxLength(200); //
 
-            builder.HasMany(f => f.Groups)
-                .WithOne(g => g.Faculty)
-                .HasForeignKey(g => g.FacultyId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+            builder.HasMany(f => f.Groups) //
+                .WithOne(g => g.Faculty);
         }
     }
 }

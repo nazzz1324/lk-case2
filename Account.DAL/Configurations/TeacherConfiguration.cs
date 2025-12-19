@@ -8,28 +8,19 @@ namespace Account.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Teacher> builder)
         {
-            builder.Property(t => t.Id).ValueGeneratedOnAdd();
-            builder.Property(t => t.Fullname).IsRequired().HasMaxLength(200);
-            builder.Property(t => t.DateOfBirth).IsRequired();
-            builder.Property(t => t.AcademicDegree).HasMaxLength(100);
+            builder.Property(t => t.Id).ValueGeneratedOnAdd().IsRequired();//
+            builder.Property(t => t.Firstname).IsRequired().HasMaxLength(40);//
+            builder.Property(t => t.Lastname).IsRequired().HasMaxLength(40);//
+            builder.Property(t => t.Middlename).IsRequired().HasMaxLength(40);//
 
             builder.HasOne(t => t.User)
-                .WithOne(u => u.Teacher )
-                .HasForeignKey<Teacher>(t => t.Id)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .WithOne(u => u.Teacher);//
 
             builder.HasMany(t => t.IndicatorScores)
-                .WithOne(si => si.Teacher)
-                .HasForeignKey(si => si.TeacherId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
+                .WithOne(si => si.Teacher);//
 
             builder.HasMany(t => t.Disciplines)
-                .WithMany(d => d.Teachers)
-                .UsingEntity<TeacherDiscipline>(
-                l => l.HasOne<Discipline>().WithMany().HasForeignKey(x => x.DisciplineId),
-                l => l.HasOne<Teacher>().WithMany().HasForeignKey(x => x.TeacherId)
-                );
-
+                .WithMany(d => d.Teachers);//
         }
     }
 }

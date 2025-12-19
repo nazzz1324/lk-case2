@@ -8,15 +8,14 @@ namespace Account.Domain.Entity.LinkedEntites
 {
     public class Indicator
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string? Description { get; set; }
+        public long Id { get; set; }//
+        public string Index { get; set; }//
+        public string Name { get; set; }//
+        public string? Description { get; set; }//
+        public long? CompetenceId { get; set; }//
 
-        public long DisciplineId { get; set; }
-        public string CompetenceId { get; set; }
-
-        public Discipline Discipline { get; set; }
-        public Competence Competence { get; set; }
-        public IndicatorScore IndicatorScore { get; set; }
+        public ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();//
+        public Competence Competence { get; set; }//
+        public IndicatorScore IndicatorScore { get; set; }//
     }
-}
+}//maxScore вставить в индикатор скор

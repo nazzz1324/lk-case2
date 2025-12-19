@@ -10,16 +10,17 @@ namespace Account.Domain.Entity
 {
     public class Group
     {
-        public long Id { get; set; }
-        public long CourseId {  get; set; } // Курс студента (год)
-        public long FacultyId { get; set; }
-        public long StudentId { get; set; }
-        public long EducationFormId { get; set; }
+        public long Id { get; set; } //
+        public string Name { get; set; } //
 
-        public EducationForm EducationForm { get; set; }
-        public Faculty Faculty { get; set; }
-        public Course Course { get; set; }  // Курс студента (год)
-        public ICollection<Student> Students { get; set; } = new List<Student>();
-        public ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();
+        //public long FacultyId { get; set; }
+        public long ProleId { get; set; } //
+        //public long EducationFormId { get; set; }
+
+        //public EducationForm EducationForm { get; set; }
+        public ProfessionalRole ProfessionalRole { get; set; }//
+        //public Faculty Faculty { get; set; }
+        public ICollection<Student> Students { get; set; } = new List<Student>();//
+        public ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();//
     }
 }

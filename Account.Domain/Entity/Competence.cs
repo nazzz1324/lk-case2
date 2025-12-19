@@ -9,15 +9,14 @@ namespace Account.Domain.Entity
 {
     public class Competence
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public long Id { get; set; }//
+        public string Index { get; set; }//
+        public string Name { get; set; }//
+        public string Description { get; set; }//
 
-        public long proleId { get; set; }
-
-        public ICollection<Indicator> Indicators { get; set; } = new List<Indicator>();
-        public CompetenceScore CompetenceScore { get; set; }
-        public ProfessionalRole ProfessionalRole { get; set; }
+        public ICollection<Indicator> Indicators { get; set; } = new List<Indicator>();//
+        public CompetenceScore CompetenceScore { get; set; }//
+        public ICollection<ProfessionalRole> ProfessionalRoles { get; set; } = new List<ProfessionalRole>();//ok
     }
 
 }

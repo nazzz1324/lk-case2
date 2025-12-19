@@ -7,7 +7,7 @@ namespace Account.DAL
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options ) : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureDeleted();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

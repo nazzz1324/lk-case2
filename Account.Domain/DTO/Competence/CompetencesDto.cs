@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Account.Domain.DTO.Competence
 {
-    public class CompetenceDto
+    public class CompetencesDto
     {
-        public long Id { get; set; }
+        public string Id { get; set; }
         public string Index { get; set; }
         public string Name { get; set; }          
         public string Description { get; set; }
-        public List<string>? IndicatorIndexes { get; set; } = new();
     }
 }

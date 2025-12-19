@@ -9,10 +9,11 @@ namespace Account.Domain.Entity
 {
     public class ProfessionalRole
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string? Description { get; set; }
+        public long Id { get; set; }//
+        public string Name { get; set; }//
+        public string? Description { get; set; }//
 
-        public ICollection<Competence> Competences { get; set; } = new List<Competence>();
+        public ICollection<Competence> Competences { get; set; } = new List<Competence>();//
+        public ICollection<Group> Groups { get; set; } = new List<Group>();//
     }
 }

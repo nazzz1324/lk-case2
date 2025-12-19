@@ -11,16 +11,16 @@ namespace Account.Domain.Entity
 {
     public class IndicatorScore
     {
-        public long Id { get; set; } 
-        public byte ScoreValue { get; set; }
-        public byte Semester { get; set; }
+        public long Id { get; set; }//
+        public byte ScoreValue { get; set; }//
+        public byte MaxScore { get; set; } = 5;//
+        public byte Semester { get; set; }//
+        public long StudentId { get; set; }//
+        public long IndicatorId { get; set; }//
+        public long TeacherId { get; set; }//
 
-        public long StudentId { get; set; }
-        public string IndicatorId { get; set; }
-        public long TeacherId { get; set; }
-
-        public Student Student { get; set; }
-        public Indicator Indicator { get; set; }
-        public Teacher Teacher { get; set; }
+        public Student Student { get; set; }//
+        public Indicator Indicator { get; set; }//
+        public Teacher Teacher { get; set; }//
     }
 }

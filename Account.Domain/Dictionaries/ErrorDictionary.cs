@@ -14,7 +14,13 @@ namespace Account.Domain.Dictionaries
             [ErrorCodes.PasswordNotEqualsPasswordConfirm] = 400, 
             [ErrorCodes.PasswordIsWrong] = 401,
 
+            // Компетенции
+            [ErrorCodes.CompetenceAlreadyExists] = 409,
+            [ErrorCodes.CompetenceNotFound] = 404,
+
+            // Индикаторы
             [ErrorCodes.IndicatorAlreadyExists] = 409,
+            [ErrorCodes.IndicatorNotFound] = 404,
 
             // Ролевая политика
             [ErrorCodes.RoleAlreadyExists] = 409,

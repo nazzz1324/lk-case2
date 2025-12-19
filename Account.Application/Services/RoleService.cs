@@ -47,7 +47,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.UserNotFound,
+                    Message = ErrorMessage.UserNotFound,
                     ErrorCode = (int)ErrorCodes.UserNotFound,
                 };
             }
@@ -61,7 +61,7 @@ namespace Account.Application.Services
                 {
                     return new BaseResult<UserRoleDto>
                     {
-                        ErrorMessage = ErrorMessage.RoleNotFound,
+                        Message = ErrorMessage.RoleNotFound,
                         ErrorCode = (int)ErrorCodes.RoleNotFound,
                     };
                 }
@@ -86,7 +86,7 @@ namespace Account.Application.Services
 
             return new BaseResult<UserRoleDto>
             {
-                ErrorMessage = ErrorMessage.UserAlreadyExistsThisRole,
+                Message = ErrorMessage.UserAlreadyExistsThisRole,
                 ErrorCode = (int)ErrorCodes.UserAlreadyExistsThisRole,
             };
         }
@@ -99,7 +99,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<Role>
                 {
-                    ErrorMessage = ErrorMessage.RoleAlreadyExists,
+                    Message = ErrorMessage.RoleAlreadyExists,
                     ErrorCode = (int)ErrorCodes.RoleAlreadyExists,
                 };
             }
@@ -120,21 +120,22 @@ namespace Account.Application.Services
         public async Task<BaseResult<RoleDto>> DeleteRoleAsync(long id)
         {
             var role = await _roleRepository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
-            if(role != null)
+            if(role == null)
             {
                 return new BaseResult<RoleDto>
                 {
-                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    Message = ErrorMessage.RoleNotFound,
                     ErrorCode = (int)ErrorCodes.RoleNotFound,
                 };
             }
 
-            var updatedRole = _roleRepository.Update(role);
+            _roleRepository.Remove(role);
             await _roleRepository.SaveChangesAsync();
 
             return new BaseResult<RoleDto>()
             {
-                Data = _mapper.Map<RoleDto>(updatedRole),
+                Data = _mapper.Map<RoleDto>(role),
+                Message = "Роль удалена"
             };
 
         }
@@ -149,7 +150,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.UserNotFound,
+                    Message = ErrorMessage.UserNotFound,
                     ErrorCode = (int)ErrorCodes.UserNotFound,
                 };
             }
@@ -159,7 +160,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    Message = ErrorMessage.RoleNotFound,
                     ErrorCode = (int)ErrorCodes.RoleNotFound,
                 };
             }
@@ -188,7 +189,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<RoleDto>
                 {
-                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    Message = ErrorMessage.RoleNotFound,
                     ErrorCode = (int)ErrorCodes.RoleNotFound,
                 };
             }
@@ -212,7 +213,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.UserNotFound,
+                    Message = ErrorMessage.UserNotFound,
                     ErrorCode = (int)ErrorCodes.UserNotFound,
                 };
             }
@@ -222,7 +223,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    Message = ErrorMessage.RoleNotFound,
                     ErrorCode = (int)ErrorCodes.RoleNotFound,
                 };
             }
@@ -232,7 +233,7 @@ namespace Account.Application.Services
             {
                 return new BaseResult<UserRoleDto>
                 {
-                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    Message = ErrorMessage.RoleNotFound,
                     ErrorCode = (int)ErrorCodes.RoleNotFound,
                 };
             }

@@ -10,15 +10,15 @@ namespace Account.Domain.Entity
 {
     public class DisciplineScore
     {
-        public long Id { get; set; }
-        public byte Score { get; set; }
-        public byte Semester { get; set; }
+        public long Id { get; set; } //
+        public byte Score { get; set; } //
+        public byte Semester { get; set; } //
 
-        public long StudentId { get; set; }
-        public long DisciplineId { get; set; }
+        public long StudentId { get; set; } //
+        public long DisciplineId { get; set; } //
 
-        public Student Student { get; set; }
-        public Discipline Discipline { get; set; }
+        public Student Student { get; set; } //
+        public Discipline Discipline { get; set; } // ok
 
     }
 }

@@ -151,4 +151,13 @@
   <data name="IndicatorAlreadyExists" xml:space="preserve">
     <value>IndicatorAlreadyExists</value>
   </data>
+  <data name="IndicatorNotFound" xml:space="preserve">
+    <value>IndicatorNotFound</value>
+  </data>
+  <data name="CompetenceAlreadyExists" xml:space="preserve">
+    <value>CompetenceAlreadyExists</value>
+  </data>
+  <data name="CompetenceNotFound" xml:space="preserve">
+    <value>CompetenceNotFound</value>
+  </data>
 </root>

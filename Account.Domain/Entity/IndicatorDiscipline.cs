@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Account.Domain.Entity
 {
-    public class TeacherDiscipline
+    public class IndicatorDiscipline
     {
-        public long TeacherId { get; set; }//
+        public long IndicatorId { get; set; }//
         public long DisciplineId { get; set; }//
     }
 }
