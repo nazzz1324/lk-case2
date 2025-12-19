@@ -15,7 +15,6 @@ import Groups from "./pages/admin/Groups";
 import Disciplines from "./pages/admin/Disciplines";
 import Competencies from "./pages/admin/Competencies";
 import Indicators from "./pages/admin/Indicators";
-import Relations from "./pages/admin/Relations";
 import Professions from "./pages/admin/Professions";
 
 // Teacher Pages
@@ -41,7 +40,6 @@ const pageConfig: Record<string, PageConfig> = {
   "/disciplines": { title: "Дисциплины", component: Disciplines, showLayout: true },
   "/competencies": { title: "Компетенции", component: Competencies, showLayout: true },
   "/indicators": { title: "Индикаторы", component: Indicators, showLayout: true },
-  "/relations": { title: "Связи", component: Relations, showLayout: true },
   "/professions": { title: "Профессии", component: Professions, showLayout: true },
   "/teacher/disciplines": { title: "Мои дисциплины", component: TeacherDisciplines, showLayout: true },
   "/teacher/grading/:id": { title: "Оценивание студентов", component: Grading, showLayout: true },
@@ -106,7 +104,6 @@ function Router() {
               <Route path="/disciplines" component={Disciplines} />
               <Route path="/competencies" component={Competencies} />
 	              <Route path="/indicators" component={Indicators} />
-	              <Route path="/relations" component={Relations} />
 	              <Route path="/professions" component={Professions} />
 	              <Route path="/teacher/disciplines" component={TeacherDisciplines} />
               <Route path="/teacher/grading/:id" component={Grading} />
