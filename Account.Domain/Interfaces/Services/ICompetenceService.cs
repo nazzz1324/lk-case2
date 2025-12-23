@@ -27,13 +27,13 @@ namespace Account.Domain.Interfaces.Services
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        Task<BaseResult<Competence>> CreateCompetenceAsync(CreateCompetenceDto dto);
+        Task<BaseResult<CompetenceDto>> CreateCompetenceAsync(CreateCompetenceDto dto);
         /// <summary>
         /// Удаление компетенции
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<BaseResult<CompetenceDto>> DeleteCompetenceeAsync(long id);
+        Task<BaseResult<CompetenceDto>> DeleteCompetenceAsync(long id);
         /// <summary>
         /// Обновление компетенции
         /// </summary>

@@ -160,4 +160,43 @@
   <data name="CompetenceNotFound" xml:space="preserve">
     <value>CompetenceNotFound</value>
   </data>
+  <data name="DisciplineNotFound" xml:space="preserve">
+    <value>DisciplineNotFound</value>
+  </data>
+  <data name="DisciplineAlreadyExists" xml:space="preserve">
+    <value>DisciplineAlreadyExists</value>
+  </data>
+  <data name="ProleAlreadyExists" xml:space="preserve">
+    <value>ProleAlreadyExists</value>
+  </data>
+  <data name="ProleNotFound" xml:space="preserve">
+    <value>ProleNotFound</value>
+  </data>
+  <data name="TeacherAlreadyExists" xml:space="preserve">
+    <value>TeacherAlreadyExists</value>
+  </data>
+  <data name="TeacherNotFound" xml:space="preserve">
+    <value>TeacherNotFound</value>
+  </data>
+  <data name="TeacherNoAccess" xml:space="preserve">
+    <value>TeacherDoesNotTeachThisDiscipline</value>
+  </data>
+  <data name="GroupAlreadyExists" xml:space="preserve">
+    <value>GroupAlreadyExists</value>
+  </data>
+  <data name="GroupNotFound" xml:space="preserve">
+    <value>GroupNotFound</value>
+  </data>
+  <data name="InvalidScore" xml:space="preserve">
+    <value>Invalid Indicator Score (Max value 5)</value>
+  </data>
+  <data name="StudentNotFound" xml:space="preserve">
+    <value>StudentNotFound</value>
+  </data>
+  <data name="StudentDoesNotHaveGroup" xml:space="preserve">
+    <value>Student does not have a group</value>
+  </data>
+  <data name="GroupDoesNotHaveThisDiscipline" xml:space="preserve">
+    <value>GroupDoesNotHaveThisDiscipline</value>
+  </data>
 </root>

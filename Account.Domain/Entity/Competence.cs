@@ -15,7 +15,7 @@ namespace Account.Domain.Entity
         public string Description { get; set; }//
 
         public ICollection<Indicator> Indicators { get; set; } = new List<Indicator>();//
-        public CompetenceScore CompetenceScore { get; set; }//
+        public ICollection<CompetenceScore> CompetenceScores { get; set; } = new List<CompetenceScore>();//
         public ICollection<ProfessionalRole> ProfessionalRoles { get; set; } = new List<ProfessionalRole>();//ok
     }
 

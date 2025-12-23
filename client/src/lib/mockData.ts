@@ -1,4 +1,3 @@
-// Mock data for the competency profile system
 
 export const mockUsers = [
   {

@@ -79,6 +79,51 @@ namespace Account.Application.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на DisciplineAlreadyExists.
+        /// </summary>
+        internal static string DisciplineAlreadyExists {
+            get {
+                return ResourceManager.GetString("DisciplineAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на DisciplineNotFound.
+        /// </summary>
+        internal static string DisciplineNotFound {
+            get {
+                return ResourceManager.GetString("DisciplineNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GroupAlreadyExists.
+        /// </summary>
+        internal static string GroupAlreadyExists {
+            get {
+                return ResourceManager.GetString("GroupAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GroupDoesNotHaveThisDiscipline.
+        /// </summary>
+        internal static string GroupDoesNotHaveThisDiscipline {
+            get {
+                return ResourceManager.GetString("GroupDoesNotHaveThisDiscipline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GroupNotFound.
+        /// </summary>
+        internal static string GroupNotFound {
+            get {
+                return ResourceManager.GetString("GroupNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на IndicatorAlreadyExists.
         /// </summary>
         internal static string IndicatorAlreadyExists {
@@ -115,6 +160,15 @@ namespace Account.Application.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Invalid Indicator Score (Max value 5).
+        /// </summary>
+        internal static string InvalidScore {
+            get {
+                return ResourceManager.GetString("InvalidScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Invalid token.
         /// </summary>
         internal static string InvalidToken {
@@ -142,6 +196,24 @@ namespace Account.Application.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на ProleAlreadyExists.
+        /// </summary>
+        internal static string ProleAlreadyExists {
+            get {
+                return ResourceManager.GetString("ProleAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ProleNotFound.
+        /// </summary>
+        internal static string ProleNotFound {
+            get {
+                return ResourceManager.GetString("ProleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Role already exists.
         /// </summary>
         internal static string RoleAlreadyExists {
@@ -156,6 +228,51 @@ namespace Account.Application.Resources {
         internal static string RoleNotFound {
             get {
                 return ResourceManager.GetString("RoleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Student does not have a group.
+        /// </summary>
+        internal static string StudentDoesNotHaveGroup {
+            get {
+                return ResourceManager.GetString("StudentDoesNotHaveGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на StudentNotFound.
+        /// </summary>
+        internal static string StudentNotFound {
+            get {
+                return ResourceManager.GetString("StudentNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на TeacherAlreadyExists.
+        /// </summary>
+        internal static string TeacherAlreadyExists {
+            get {
+                return ResourceManager.GetString("TeacherAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на TeacherDoesNotTeachThisDiscipline.
+        /// </summary>
+        internal static string TeacherNoAccess {
+            get {
+                return ResourceManager.GetString("TeacherNoAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на TeacherNotFound.
+        /// </summary>
+        internal static string TeacherNotFound {
+            get {
+                return ResourceManager.GetString("TeacherNotFound", resourceCulture);
             }
         }
         

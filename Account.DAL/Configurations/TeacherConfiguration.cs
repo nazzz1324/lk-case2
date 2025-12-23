@@ -11,7 +11,24 @@ namespace Account.Infrastructure.Persistence.Configurations
             builder.Property(t => t.Id).ValueGeneratedOnAdd().IsRequired();//
             builder.Property(t => t.Firstname).IsRequired().HasMaxLength(40);//
             builder.Property(t => t.Lastname).IsRequired().HasMaxLength(40);//
-            builder.Property(t => t.Middlename).IsRequired().HasMaxLength(40);//
+            builder.Property(t => t.Middlename).HasMaxLength(40);//
+            builder.HasData(new List<Teacher>()
+            {
+                new Teacher()
+                {
+                    Id = 310,
+                    Firstname = "Рустам",
+                    Lastname = "Бадмаев",
+                    Middlename = "Наилевич",
+                },
+                new Teacher()
+                {
+                    Id = 333,
+                    Firstname = "Вероника",
+                    Lastname = "Суворова",
+                    Middlename = "Александровна",
+                }
+            });
 
             builder.HasOne(t => t.User)
                 .WithOne(u => u.Teacher);//

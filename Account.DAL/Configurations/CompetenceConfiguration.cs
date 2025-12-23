@@ -1,4 +1,5 @@
 ﻿using Account.Domain.Entity;
+using Account.Domain.Entity.LinkedEntites;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,6 +16,21 @@ namespace Account.Infrastructure.Persistence.Configurations
             builder.Property(c => c.Name).IsRequired().HasMaxLength(200);//
 
             builder.Property(c => c.Description).HasMaxLength(500);//
+            builder.HasData(new List<Indicator>()
+            {
+                new Indicator()
+                {
+                    Id = 556,
+                    Index = "ПК-2",
+                    Name = "Способен управлять разви-тием инфокоммуникаци-онной системы организа-ции",
+                },
+                new Indicator()
+                {
+                    Id = 557,
+                    Index = "ПК-5",
+                    Name = "Способен осуществлять управление сервисами информационных техно-логий",
+                },
+            });
 
             builder.HasMany(c => c.ProfessionalRoles)
                 .WithMany(pr => pr.Competences)
@@ -26,7 +42,7 @@ namespace Account.Infrastructure.Persistence.Configurations
             builder.HasMany(c => c.Indicators)
                 .WithOne(i => i.Competence);//
             
-            builder.HasOne(c => c.CompetenceScore) 
+            builder.HasMany(c => c.CompetenceScores) 
                 .WithOne(cs => cs.Competence);//
         }
     }

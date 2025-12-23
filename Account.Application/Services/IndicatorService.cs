@@ -33,7 +33,7 @@ namespace Account.Application.Services
             _logger = logger;
         }
 
-        public async Task<BaseResult<Indicator>> CreateIndicatorAsync(CreateIndicatorDto dto)
+        public async Task<BaseResult<IndicatorDto>> CreateIndicatorAsync(CreateIndicatorDto dto)
         {
             var indicator = await _indicatorRepository.GetAll()
                 .FirstOrDefaultAsync(x => x.Index == dto.Index || x.Name == dto.Name);
@@ -59,9 +59,9 @@ namespace Account.Application.Services
             _logger.Information("Индикатор создан. Id: {Id}, Index: {Index}",
                 indicator.Id, indicator.Index);
 
-            return new BaseResult<Indicator>()
+            return new BaseResult<IndicatorDto>()
             {
-                Data = indicator
+                Data = _mapper.Map<IndicatorDto>(indicator)
             };
         }
 
@@ -88,7 +88,6 @@ namespace Account.Application.Services
             return new BaseResult<IndicatorDto>()
             {
                 Data = _mapper.Map<IndicatorDto>(indicator),
-                Message = "Индикатор удален"
             };
         }
 
@@ -200,7 +199,6 @@ namespace Account.Application.Services
             return new BaseResult<IndicatorDto>()
             {
                 Data = _mapper.Map<IndicatorDto>(updatedIndicator),
-                Message = "Индикатор изменен"
             };
         }
     }

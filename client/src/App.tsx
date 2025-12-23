@@ -94,28 +94,28 @@ function Router() {
       <div className="flex-1 flex flex-col">
         {showLayout && <Header title={currentConfig?.title || "Система управления"} userName={userName} userRole={userRole} />}
         <main className={`flex-1 ${showLayout ? "mt-20 lg:ml-60" : ""}`}>
-          <div className={showLayout ? "p-6" : ""}>
-            <Switch>
-	              <Route path="/login" component={Login} />
-	              {/* Admin Dashboard is the default route for admin */}
-	              <Route path="/" component={Dashboard} />
-              <Route path="/users" component={Users} />
-              <Route path="/groups" component={Groups} />
-              <Route path="/disciplines" component={Disciplines} />
-              <Route path="/competencies" component={Competencies} />
-	              <Route path="/indicators" component={Indicators} />
-	              <Route path="/professions" component={Professions} />
-	              <Route path="/teacher/disciplines" component={TeacherDisciplines} />
-              <Route path="/teacher/grading/:id" component={Grading} />
-              <Route path="/student/profile" component={StudentProfile} />
-	              <Route path="/student/disciplines" component={StudentDisciplines} />
-	              <Route path="/student/competencies" component={StudentCompetencies} />
-	              <Route path="/student/professions" component={StudentProfessions} />
-	              <Route path="/404" component={NotFound} />
-              {/* Final fallback route */}
-              <Route component={NotFound} />
-            </Switch>
-          </div>
+	          <div className={showLayout ? "p-6" : ""}>
+	            <Switch>
+		              <Route path="/login" component={Login} />
+			              {/* Admin Dashboard is the default route for admin */}
+			              <Route path="/" component={Dashboard} />
+		              <Route path="/users" component={Users} />
+		              <Route path="/groups" component={Groups} />
+		              <Route path="/disciplines" component={Disciplines} />
+		              <Route path="/competencies" component={Competencies} />
+			              <Route path="/indicators" component={Indicators} />
+			              <Route path="/professions" component={Professions} />
+		              <Route path="/teacher/disciplines" component={TeacherDisciplines} />
+	              <Route path="/teacher/grading/:id" component={Grading} />
+	              <Route path="/student/profile" component={StudentProfile} />
+		              <Route path="/student/disciplines" component={StudentDisciplines} />
+		              <Route path="/student/competencies" component={StudentCompetencies} />
+		              <Route path="/student/professions" component={StudentProfessions} />
+		              <Route path="/404" component={NotFound} />
+	              {/* Final fallback route */}
+	              <Route component={NotFound} />
+	            </Switch>
+	          </div>
         </main>
       </div>
     </div>

@@ -10,7 +10,28 @@ namespace Account.Infrastructure.Persistence.Configurations
         {
             builder.Property(g => g.Id).ValueGeneratedOnAdd().IsRequired();//
             builder.Property(g => g.Name).IsRequired().HasMaxLength(10);//
-            builder.Property(g => g.ProleId).IsRequired();//
+            builder.Property(g => g.ProleId);//
+            builder.HasData(new List<Group>()
+            {
+                new Group()
+                {
+                    Id = 10,
+                    Name = "ПИ-421Б",
+                    ProleId = 201
+                },
+                new Group()
+                {
+                    Id = 11,
+                    Name = "ПИ-422Б",
+                    ProleId = 200
+                },
+                new Group()
+                {
+                    Id = 12,
+                    Name = "СИ-421Б",
+                    ProleId = 200
+                }
+            });
 
             //builder.HasOne(g => g.EducationForm)
             //    .WithMany(f => f.Groups)

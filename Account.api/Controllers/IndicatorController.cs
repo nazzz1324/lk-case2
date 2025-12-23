@@ -1,4 +1,5 @@
 ﻿using Account.Domain.DTO.Indicator;
+using Account.Domain.Entity.LinkedEntites;
 using Account.Domain.Interfaces.Services;
 using Account.Domain.Result;
 using Microsoft.AspNetCore.Authorization;
@@ -20,12 +21,68 @@ namespace Account.api.Controllers
             _indicatorService = indicatorService;
         }
 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<CollectionResult<IndicatorsDto>>> GetIndicatorsAsync()
+        {
+            var response = await _indicatorService.GetIndicatorsAsync();
+
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        [HttpGet("search")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<CollectionResult<IndicatorsDto>>> SearchIndicatorsAsync([FromQuery] string search)
+        {
+            var response = await _indicatorService.SearchIndicatorsAsync(search);
+
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
         [HttpPost]
-        [ProducesResponseType(typeof(BaseResult<CreateIndicatorDto>), 200)]
-        [ProducesResponseType(typeof(BaseResult<CreateIndicatorDto>), 400)]
-        public async Task<ActionResult<BaseResult<CreateIndicatorDto>>> Create([FromBody] CreateIndicatorDto dto)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<BaseResult<IndicatorDto>>> CreateIndicatorAsync([FromBody] CreateIndicatorDto dto)
         {
             var response = await _indicatorService.CreateIndicatorAsync(dto);
+
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 200)]
+        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 400)]
+        public async Task<ActionResult<BaseResult<IndicatorDto>>> DeleteIndicatorAsync(long id)
+        {
+            var response = await _indicatorService.DeleteIndicatorAsync(id);
+
+            if (response.IsSuccess)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 200)]
+        [ProducesResponseType(typeof(BaseResult<IndicatorDto>), 400)]
+        public async Task<ActionResult<BaseResult<IndicatorDto>>> UpdateIndicatorAsync([FromBody] IndicatorDto dto)
+        {
+            var response = await _indicatorService.UpdateIndicatorAsync(dto);
 
             if (response.IsSuccess)
             {

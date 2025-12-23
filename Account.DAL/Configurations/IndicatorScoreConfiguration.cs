@@ -10,7 +10,7 @@ namespace Account.Infrastructure.Persistence.Configurations
         {
             builder.Property(s => s.Id).ValueGeneratedOnAdd().IsRequired();//
             builder.Property(s => s.ScoreValue).IsRequired();//
-            builder.Property(s => s.Semester).IsRequired();//
+            //builder.Property(s => s.Semester).IsRequired();//
             builder.Property(s => s.MaxScore).IsRequired();//
             builder.Property(s => s.StudentId).IsRequired();//
             builder.Property(s => s.IndicatorId).IsRequired();//
@@ -22,14 +22,17 @@ namespace Account.Infrastructure.Persistence.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(s => s.Indicator)
-                .WithOne(i =>i.IndicatorScore)
-                .HasForeignKey<IndicatorScore>(s => s.IndicatorId)
+                .WithMany(i =>i.IndicatorScores)
+                .HasForeignKey(s => s.IndicatorId)
                 .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(s => s.Teacher)
                 .WithMany(t => t.IndicatorScores)
                 .HasForeignKey(s => s.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull);//
+
+            builder.HasIndex(i => new { i.IndicatorId, i.StudentId, i.TeacherId })
+                .IsUnique();
         }
     }
 }

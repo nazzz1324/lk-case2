@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { mockUsers } from "@/lib/mockData";
+import { mockUsers, mockDisciplines } from "@/lib/mockData";
 
 interface User {
   id: number;
@@ -13,6 +13,7 @@ interface User {
   role: string;
   status: string;
   group?: string | null;
+  discipline?: string[] | null;
 }
 
 export default function Users() {
@@ -26,6 +27,7 @@ export default function Users() {
     email: "",
     role: "student",
     group: "",
+    discipline: [],
   });
 
   const filteredUsers = users.filter((user) => {
@@ -44,6 +46,7 @@ export default function Users() {
         email: user.email,
         role: user.role,
         group: user.group || "",
+        discipline: user.discipline || [],
       });
     } else {
       setEditingUser(null);
@@ -52,6 +55,7 @@ export default function Users() {
         email: "",
         role: "student",
         group: "",
+        discipline: [],
       });
     }
     setIsDialogOpen(true);
@@ -62,7 +66,7 @@ export default function Users() {
       setUsers(
         users.map((u) =>
           u.id === editingUser.id
-            ? { ...u, ...formData }
+            ? { ...u, ...formData, group: formData.role !== "student" ? null : formData.group, discipline: formData.role !== "teacher" ? null : formData.discipline }
             : u
         )
       );
@@ -73,6 +77,8 @@ export default function Users() {
           id: Math.max(...users.map((u) => u.id), 0) + 1,
           ...formData,
           status: "active",
+          group: formData.role !== "student" ? null : formData.group,
+          discipline: formData.role !== "teacher" ? null : formData.discipline,
         },
       ]);
     }
@@ -223,6 +229,45 @@ export default function Users() {
                 <option value="admin">Администратор</option>
               </select>
             </div>
+            {formData.role === "teacher" && (
+              <div className="space-y-2">
+                <Label htmlFor="discipline">Дисциплины</Label>
+                <div className="space-y-2 border p-3 rounded-lg max-h-40 overflow-y-auto">
+                  {mockDisciplines.map((d) => (
+                    <div key={d.id} className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        id={`discipline-${d.id}`}
+                        checked={formData.discipline.includes(d.name)}
+                        onChange={(e) => {
+                          const disciplineName = d.name;
+                          if (e.target.checked) {
+                            setFormData({
+                              ...formData,
+                              discipline: [...formData.discipline, disciplineName],
+                            });
+                          } else {
+                            setFormData({
+                              ...formData,
+                              discipline: formData.discipline.filter(
+                                (name) => name !== disciplineName
+                              ),
+                            });
+                          }
+                        }}
+                        className="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                      />
+                      <label
+                        htmlFor={`discipline-${d.id}`}
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        {d.name}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {formData.role === "student" && (
               <div className="space-y-2">
                 <Label htmlFor="group">Группа</Label>

@@ -12,14 +12,12 @@ namespace Account.Domain.Entity
     {
         public long Id { get; set; } //
         public string Name { get; set; } //
-
         //public long FacultyId { get; set; }
+        public string Curator { get; set; }//
         public long ProleId { get; set; } //
         //public long EducationFormId { get; set; }
 
-        //public EducationForm EducationForm { get; set; }
         public ProfessionalRole ProfessionalRole { get; set; }//
-        //public Faculty Faculty { get; set; }
         public ICollection<Student> Students { get; set; } = new List<Student>();//
         public ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();//
     }

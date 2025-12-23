@@ -12,6 +12,6 @@ namespace Account.Domain.DTO.Competence
         public string Index { get; set; }
         public string Name { get; set; }          
         public string Description { get; set; }
-        public List<string>? IndicatorIndexes { get; set; } = new();
+        public List<long>? IndicatorIds { get; set; } = new();
     }
 }

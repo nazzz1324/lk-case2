@@ -30,7 +30,7 @@ namespace Account.Domain.Interfaces.Services
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        Task<BaseResult<Indicator>> CreateIndicatorAsync(CreateIndicatorDto dto);
+        Task<BaseResult<IndicatorDto>> CreateIndicatorAsync(CreateIndicatorDto dto);
         /// <summary>
         /// Удаление индикатора
         /// </summary>

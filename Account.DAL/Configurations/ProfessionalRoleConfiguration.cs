@@ -10,7 +10,24 @@ namespace Account.Infrastructure.Persistence.Configurations
         {
             builder.Property(p => p.Id).ValueGeneratedOnAdd().IsRequired();//
             builder.Property(p => p.Name).IsRequired().HasMaxLength(200);//
-            builder.Property(p => p.Description).IsRequired().HasMaxLength(1000);//
+            builder.Property(p => p.Description).HasMaxLength(1000);
+            builder.HasData(new List<ProfessionalRole>()
+            {
+                new ProfessionalRole()
+                {
+                    Id = 200,
+                    Name = "Системный Аналитик",
+                    Description = "Системный анализ",
+                    
+                },
+                new ProfessionalRole()
+                {
+                    Id = 201,
+                    Name = ".Net WEB Developer",
+                    Description = "Rider мак капучинка коворкинг клавиатура тап-тап",
+
+                },
+            });//
 
             builder.HasMany(pr => pr.Competences)  
                 .WithMany(c => c.ProfessionalRoles);//

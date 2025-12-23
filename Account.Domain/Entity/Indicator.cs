@@ -16,6 +16,6 @@ namespace Account.Domain.Entity.LinkedEntites
 
         public ICollection<Discipline> Disciplines { get; set; } = new List<Discipline>();//
         public Competence Competence { get; set; }//
-        public IndicatorScore IndicatorScore { get; set; }//
+        public ICollection<IndicatorScore> IndicatorScores { get; set; } = new List<IndicatorScore>();//
     }
 }//maxScore вставить в индикатор скор

@@ -10,7 +10,7 @@ namespace Account.Infrastructure.Persistence.Configurations
         {
             builder.Property(ds => ds.Id).ValueGeneratedOnAdd().IsRequired(); //
             builder.Property(ds => ds.Score).IsRequired(); //
-            builder.Property(ds => ds.Semester).IsRequired(); //
+            //builder.Property(ds => ds.Semester).IsRequired(); //
             builder.Property(ds => ds.StudentId).IsRequired();//
             builder.Property(ds => ds.DisciplineId).IsRequired();//
 
@@ -20,9 +20,12 @@ namespace Account.Infrastructure.Persistence.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull);//
 
             builder.HasOne(ds => ds.Discipline)
-                .WithOne(d => d.DisciplineScore)
-                .HasForeignKey<DisciplineScore>(ds => ds.DisciplineId)
+                .WithMany(d => d.DisciplineScores)
+                .HasForeignKey(ds => ds.DisciplineId)
                 .OnDelete(DeleteBehavior.ClientSetNull);//
+
+            builder.HasIndex(ds => new { ds.DisciplineId, ds.StudentId})
+                .IsUnique();
         }
     }
 }

@@ -24,4 +24,4 @@ export default function MetricCard({ icon, value, label, color = "blue" }: Metri
       <div className="text-sm text-muted-foreground">{label}</div>
     </div>
   );
-}
+} 

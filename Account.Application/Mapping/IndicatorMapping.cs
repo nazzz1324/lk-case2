@@ -16,7 +16,8 @@ namespace Account.Application.Mapping
     {
         public IndicatorMapping() 
         {
-            CreateMap<Indicator, CreateIndicatorDto>().ReverseMap();
+            CreateMap<Indicator, IndicatorDto>();
+            CreateMap<CreateIndicatorDto, Indicator>();
         }
     }
 }

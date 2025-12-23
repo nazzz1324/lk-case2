@@ -39,7 +39,6 @@ export default function Header({ title, userName = "Администратор",
         </div>
 
         {/* Logout Button */}
-        
       </div>
     </header>
   );

@@ -28,6 +28,11 @@ namespace Account.Application.DependencyInjection
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IIndicatorService, IndicatorService>();
             services.AddScoped<ICompetenceService, CompetenceService>();
+            services.AddScoped<IDisciplineService, DisciplineService>();
+            services.AddScoped<IProfessionalRoleService, ProfessionalRoleService>();
+            services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IGroupService, GroupService>();
+            services.AddScoped<IStudentService, StudentService>();
         }
 
     }
